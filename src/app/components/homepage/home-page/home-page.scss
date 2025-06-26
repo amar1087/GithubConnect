@@ -1,0 +1,40 @@
+
+
+.containerDiv {
+    position: fixed;
+    top: 10%;
+    left: 40%;
+    text-align: center;
+  }
+  
+  .githubContent{
+    color: #4169E1 !important;;
+  }
+
+.buttonConnect {
+    background-color:#4169E1 !important; /* Button color */
+    color: rgb(244, 234, 234) !important; /* Text color */
+    border-radius: 10px;
+   
+}
+
+.buttonRemove {
+  background-color:#4169E1 !important; /* Button color */
+  color: rgb(244, 234, 234) !important; /* Text color */
+  border-radius: 10px;
+ 
+  position: relative;
+    left: 80%;
+    margin: 50px;
+}
+
+.userText{
+  position: absolute;
+  left: 62%;
+  top: 5px;
+}
+.text{
+  position: absolute;
+    left: 84%;
+    top: 5px;
+}

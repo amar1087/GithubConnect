@@ -1,0 +1,74 @@
+
+<mat-expansion-panel >
+  <mat-expansion-panel-header>
+    <mat-toolbar>
+       
+        <mat-toolbar-row class="textRow1"> <img src="assets/images/github.png" alt="GitHub Logo" width="30" height="30">
+     
+          &nbsp;
+          <span> Github</span>  &nbsp; <div *ngIf = "this.userLoggedIn"><img  src="assets/images/check.png" alt="GitHub Logo" width="30" height="30"></div>
+          <div *ngIf = "this.userLoggedIn" class="userText"> {{userName}}:  Last Synced: {{ lastSynchedDate}}</div></mat-toolbar-row>
+        <mat-toolbar-row class="text"><span>Sync Type: Full</span></mat-toolbar-row>
+       </mat-toolbar>
+       <div class="containerDiv"  *ngIf = "!this.userLoggedIn" >
+      <div> <button mat-raised-button class="buttonConnect" (click)="onLogin()">Connect</button></div>
+      <div><h2 class="githubContent"> Connect User to Github</h2></div> 
+      
+       </div>
+   
+  </mat-expansion-panel-header>
+
+  <div *ngIf="this.userLoggedIn"> <button mat-raised-button class="buttonRemove" (click)="removeData();">Remove</button></div>
+
+  </mat-expansion-panel>
+  <div id="mainContainer" class="mainContainer">
+
+    <div *ngIf="userLoggedIn">
+      <button mat-raised-button color="primary" class="buttonRemove" (click)="fullImportOrgsData()">
+        Full Import
+      </button>
+    </div>
+  
+    <div *ngIf="userLoggedIn" class="filter-row" style="display: flex; gap: 16px; align-items: center; margin-top: 16px; flex-wrap: wrap;">
+      
+      <!-- Active Integration Dropdown -->
+      <mat-form-field appearance="outline">
+        <mat-label>Active Integration</mat-label>
+        <mat-select >
+          <mat-option value="github">Github</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <!-- Entity Dropdown -->
+      <mat-form-field appearance="outline">
+        <mat-label>Entity</mat-label>
+        <mat-select [(ngModel)]="selectedStatus">
+          <mat-option *ngFor="let status of statusList" [value]="status.value">
+            {{ status.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <!-- Search Input -->
+      <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input matInput type="text" [(ngModel)]="searchQuery" placeholder="Type to search..." />
+      </mat-form-field>
+  
+    </div>
+  
+    <!-- Uncomment if using ag-grid -->
+    <!--
+    <ag-grid-angular
+      class="ag-theme-alpine"
+      style="width: 100%; height: 500px"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef">
+    </ag-grid-angular>
+    -->
+  
+
+</div>
+ 
+
