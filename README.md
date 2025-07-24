@@ -1,59 +1,46 @@
-# GithubConnect
+# 🔗 GitHub Integration Dashboard (Fullstack)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+This project is a complete fullstack application that allows users to connect their GitHub account, fetch repository-related data, and visualize it using an interactive dashboard. It consists of:
 
-## Development server
+- A **Frontend** built in Angular with Angular Material and Ag-Grid
+- A **Backend** built in Node.js with GitHub OAuth, MongoDB for persistence, and Express APIs
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## ✨ Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 🚀 Frontend (Angular)
+- GitHub connection panel with OAUTH/Auth app
+- Dropdown filters (Integration, Entity type)
+- Quick search box to filter repositories
+- Ag-Grid table with pagination, sorting, filtering
+- Full Import button to sync GitHub organization data
 
-## Code scaffolding
+### 🔧 Backend (Node.js + Express)
+- GitHub OAuth callback handler (`/callback`)
+- Fetch and persist GitHub organization and repo data
+- JWT-based session token generation
+- APIs to fetch filtered data by repo, state, and type
+- Delete all user and repo data with a single call
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 🗂 Project Structure
 
 ```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+project-root/
+│
+├── frontend/
+│   ├── home-page.ts         # Angular component logic
+│   ├── home-page.html       # Angular template
+│   ├── home-page.scss       # Component styles
+│   └── home-page.spec.ts    # Component tests
+│
+├── backend/
+│   ├── controllers/
+│   │   └── githubController.js # Main API logic
+│   ├── models/
+│   │   ├── githubService.js
+│   │   └── dbService.js
+│   └── helpers/
+│       └── githubOrgData.js   # Mongoose model
