@@ -2,7 +2,7 @@
 
 This project is a complete fullstack application that allows users to connect their GitHub account, fetch repository-related data, and visualize it using an interactive dashboard. It consists of:
 
-- A **Frontend** built in Angular with Angular Material and Ag-Grid
+- A **Frontend** built in Angular 19 with Angular Material and Ag-Grid
 - A **Backend** built in Node.js with GitHub OAuth, MongoDB for persistence, and Express APIs
 
 ---
@@ -25,22 +25,3 @@ This project is a complete fullstack application that allows users to connect th
 
 ---
 
-## 🗂 Project Structure
-
-```bash
-project-root/
-│
-├── frontend/
-│   ├── home-page.ts         # Angular component logic
-│   ├── home-page.html       # Angular template
-│   ├── home-page.scss       # Component styles
-│   └── home-page.spec.ts    # Component tests
-│
-├── backend/
-│   ├── controllers/
-│   │   └── githubController.js # Main API logic
-│   ├── models/
-│   │   ├── githubService.js
-│   │   └── dbService.js
-│   └── helpers/
-│       └── githubOrgData.js   # Mongoose model
